@@ -6,8 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import static com.codeborne.selenide.Selenide.open;
 
 public class BaseTest {
-    protected static final String URL_YANDEX_MAIN_PAGE = "https://yandex.ru/";
-    protected static final String URL_STELLAR_BURGER_PAGE = "https://stellarburgers.nomoreparties.site";
+    protected static final String URL_STELLAR_BURGER_PAGE = "https://stellarburgers.nomoreparties.site/";
     protected static final String URL_STELLAR_BURGER_PAGE_LOGIN = "https://stellarburgers.nomoreparties.site/login";
 
     //для яндекса:

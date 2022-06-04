@@ -5,8 +5,7 @@ import org.openqa.selenium.support.How;
 
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.switchTo;
-import static com.codeborne.selenide.Selenide.webdriver;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverConditions.url;
 
 public class RegistrationPage {
@@ -35,8 +34,10 @@ public class RegistrationPage {
     @FindBy(how = How.XPATH, using = ".//*[@class='button_button__33qZ0 button_button_type_primary__1O7Bx button_button_size_medium__3zxIa']")
     public SelenideElement buttonRegistration;
 
-    public void clickButtonRegistration() {
+    public LoginPage clickButtonRegistration() {
         buttonRegistration.click();
+        LoginPage loginPage = page(LoginPage.class);
+        return loginPage;
     }
 
     public void getURLafterClickButtonRegistration(String url) {
@@ -49,6 +50,25 @@ public class RegistrationPage {
 
     public void getMessageNotCorrectPassword() {
         messageNotCorrectPassword.shouldBe(exactText("Некорректный пароль"));
+    }
+
+    @FindBy(how = How.XPATH, using = ".//*[@class='Auth_link__1fOlj']")
+    public SelenideElement buttonEnterByRegistrationForm;
+
+    public LoginPage clickButtonEnterByRegistrationForm() {
+        buttonEnterByRegistrationForm.click();
+        LoginPage loginPage = page(LoginPage.class);
+        return loginPage;
+    }
+
+
+    @FindBy(how = How.XPATH, using = ".//*[@class='AppHeader_header__logo__2D0X2']")
+    public SelenideElement logoOnRegistrationPage;
+
+    public MainPage clickLogoOnRegistrationPage() {
+        logoOnRegistrationPage.scrollTo().click();
+        MainPage mainPage = page(MainPage.class);
+        return mainPage;
     }
 
 
