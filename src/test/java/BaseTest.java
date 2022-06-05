@@ -1,9 +1,4 @@
 import com.github.javafaker.Faker;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.openqa.selenium.chrome.ChromeOptions;
-
-import static com.codeborne.selenide.Selenide.open;
 
 public class BaseTest {
     protected static final String URL_STELLAR_BURGER_PAGE = "https://stellarburgers.nomoreparties.site/";
@@ -16,8 +11,6 @@ public class BaseTest {
         ChromeOptions options = new ChromeOptions();
         options.setBinary("/Applications/Yandex.app/Contents/MacOS/Yandex");
     }*/
-
-
     Faker faker = new Faker();
     protected String name = faker.pokemon().name();
     protected String password = faker.lorem().characters(10);

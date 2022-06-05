@@ -1,11 +1,10 @@
-import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import static com.codeborne.selenide.Condition.exactText;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.page;
+import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.WebDriverConditions.url;
 
 public class RegistrationPage {
@@ -70,6 +69,17 @@ public class RegistrationPage {
         MainPage mainPage = page(MainPage.class);
         return mainPage;
     }
+
+    @FindBy(how = How.XPATH, using = ".//*[@class='Auth_link__1fOlj']")
+    public SelenideElement buttonEnterfromRegistrationForm;
+
+    public LoginPage clickButtonEnterfromRegistrationForm() {
+        buttonEnterfromRegistrationForm.scrollTo().click();
+        LoginPage loginPage = page(LoginPage.class);
+        return loginPage;
+    }
+
+
 
 
 }
