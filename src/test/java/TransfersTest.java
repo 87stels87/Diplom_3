@@ -30,12 +30,10 @@ public class TransfersTest extends BaseTest {
     public void testTransferOnPersonalAccount() {
         MainPage objMainPage = open(URL_STELLAR_BURGER_PAGE, MainPage.class);
         LoginPage objLoginPage = objMainPage.clickButtonPersonalAccount();
-        objLoginPage.setEmailByLoginPage(email);
-        objLoginPage.setPasswordFieldByLoginPage(password);
-        objLoginPage.clickButtonEnter();
+        objLoginPage.setEmailAndPasswordAndClickByLoginPage(email, password);
         MainPage objMainPage1 = objLoginPage.clickLogoOnLoginPage();
         LoginPage objLoginPage1 = objMainPage1.clickButtonPersonalAccount();
-        objLoginPage1.getButtonAccount();
+        objLoginPage1.checkVisibleButtonProfile();
     }
 
     @DisplayName("Проверка перехода из личного кабинета в конструктор")
@@ -44,49 +42,41 @@ public class TransfersTest extends BaseTest {
     public void testTransferFromPersonalAccountInСonstructor() {
         MainPage objMainPage = open(URL_STELLAR_BURGER_PAGE, MainPage.class);
         LoginPage objLoginPage = objMainPage.clickButtonPersonalAccount();
-        objLoginPage.setEmailByLoginPage(email);
-        objLoginPage.setPasswordFieldByLoginPage(password);
-        objLoginPage.clickButtonEnter();
+        objLoginPage.setEmailAndPasswordAndClickByLoginPage(email, password);
         MainPage objMainPage1 = objLoginPage.clickButtonConsructor();
         objMainPage1.CheckGetMessageAssembleBurger();
     }
 
-    @DisplayName("Переход на булки")
-    @Description("Переход на булки")
+    @DisplayName("Переход на раздел булки (по умолчанию на главной странице)")
+    @Description("Переход на раздел булки (по умолчанию на главной странице)")
     @Test
-    public void testGetBun() {
+    public void testTransferOnBunChapter() {
         MainPage objMainPage = open(URL_STELLAR_BURGER_PAGE, MainPage.class);
         LoginPage objLoginPage = objMainPage.clickButtonPersonalAccount();
-        objLoginPage.setEmailByLoginPage(email);
-        objLoginPage.setPasswordFieldByLoginPage(password);
-        objLoginPage.clickButtonEnter();
-        MainPage objMainPage1 = objLoginPage.clickButtonConsructor();
-        objMainPage1.CheckGetBun();
+        MainPage objMainPage1 = objLoginPage.setEmailAndPasswordAndClickByLoginPage(email, password);
+      objMainPage1.checkCurentChapterBun();
     }
 
-    @DisplayName("Переход на соусы")
-    @Description("Переход на соусы")
+
+    @DisplayName("Переход на раздел начинки")
+    @Description("Переход на раздел начинки")
     @Test
-    public void testGetSauce() {
+    public void testTransferOnFillingChapter() {
         MainPage objMainPage = open(URL_STELLAR_BURGER_PAGE, MainPage.class);
         LoginPage objLoginPage = objMainPage.clickButtonPersonalAccount();
-        objLoginPage.setEmailByLoginPage(email);
-        objLoginPage.setPasswordFieldByLoginPage(password);
-        objLoginPage.clickButtonEnter();
-        MainPage objMainPage1 = objLoginPage.clickButtonConsructor();
-        objMainPage1.CheckGetSauce();
+        MainPage objMainPage1 = objLoginPage.setEmailAndPasswordAndClickByLoginPage(email, password);
+        objMainPage1.transferFillingChapter();
+        objMainPage1.CheckCurentChapterFilling();
     }
 
-    @DisplayName("Переход на начинки")
-    @Description("Переход на начинки")
+    @DisplayName("Переход на раздел соусы")
+    @Description("Переход на раздел соусы")
     @Test
-    public void testGetFilling() {
+    public void testTransferOnSouceChapter() {
         MainPage objMainPage = open(URL_STELLAR_BURGER_PAGE, MainPage.class);
         LoginPage objLoginPage = objMainPage.clickButtonPersonalAccount();
-        objLoginPage.setEmailByLoginPage(email);
-        objLoginPage.setPasswordFieldByLoginPage(password);
-        objLoginPage.clickButtonEnter();
-        MainPage objMainPage1 = objLoginPage.clickButtonConsructor();
-        objMainPage1.CheckGetFilling();
+        MainPage objMainPage1 = objLoginPage.setEmailAndPasswordAndClickByLoginPage(email, password);
+        objMainPage1.transferSouceChapter();
+        objMainPage1.CheckCurentChapterSouce();
     }
 }

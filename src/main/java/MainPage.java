@@ -2,6 +2,7 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.page;
 
 public class MainPage {
@@ -37,25 +38,67 @@ public class MainPage {
         messageAssembleBurger.shouldBe().isDisplayed();
     }
 
-    @FindBy(how = How.XPATH, using = ".//*[@class='BurgerIngredient_ingredient__text__yp3dH' and contains(text(),'Флюоресцентная булка R2-D3')]")
+/*    @FindBy(how = How.XPATH, using = ".//*[@class='BurgerIngredient_ingredient__text__yp3dH' and contains(text(),'Флюоресцентная булка R2-D3')]")
     public SelenideElement bun;
 
     public void CheckGetBun() {
+        //  bun.scrollTo().;
         bun.shouldBe().isDisplayed();
     }
 
     @FindBy(how = How.XPATH, using = ".//*[@class='BurgerIngredient_ingredient__text__yp3dH' and contains(text(),'Соус Spicy-X')]")
-    public SelenideElement sauce;
+    public SelenideElement sauce;*/
 
-    public void CheckGetSauce() {
-        sauce.scrollTo().shouldBe().isDisplayed();
+/*    public void CheckGetSauce() {
+        sauce.shouldBe(visible);
     }
 
     @FindBy(how = How.XPATH, using = ".//*[@class='BurgerIngredient_ingredient__text__yp3dH' and contains(text(),'Мясо бессмертных моллюсков Protostomia')]")
-    public SelenideElement filling;
+    public SelenideElement filling;*/
 
+/*
     public void CheckGetFilling() {
-        filling.scrollTo().shouldBe().isDisplayed();
+        filling.scrollTo().shouldBe(visible);
     }
+*/
+
+/*
+    @FindBy(how = How.XPATH, using = ".//*[@class='text text_type_main-default'  and contains(text(),'Соусы')]")
+    public SelenideElement sauceRaz;
+
+    public void sauceRaz() {
+        sauceRaz.click();
+    }*/
+
+
+    @FindBy(how = How.XPATH, using = ".//*[@class='text text_type_main-default'  and contains(text(),'Начинки')]")
+    public SelenideElement fillingChapter;
+
+    public void transferFillingChapter() {
+        fillingChapter.click();
+    }
+
+    @FindBy(how = How.XPATH, using = ".//*[@class='text text_type_main-default'  and contains(text(),'Соус')]")
+    public SelenideElement souceChapter;
+
+    public void transferSouceChapter() {
+        souceChapter.click();
+    }
+
+    public void CheckCurentChapterSouce() {
+        curentChapter.shouldBe(exactText("Соусы"));
+    }
+
+    @FindBy(how = How.XPATH, using = ".//*[@class='tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']")
+    public SelenideElement curentChapter;
+
+    public void CheckCurentChapterFilling() {
+        curentChapter.shouldBe(exactText("Начинки"));
+    }
+
+    public void checkCurentChapterBun() {
+        curentChapter.shouldBe(exactText("Булки"));
+    }
+
 
 }
