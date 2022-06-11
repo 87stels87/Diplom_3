@@ -8,6 +8,21 @@ import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.WebDriverConditions.url;
 
 public class RegistrationPage {
+    public void setNameEmailPassswordAndClickButtonRegistation(String name, String email, String password) {
+        this.nameFieldByRegistrationPage.setValue(name);
+        this.emailFieldByRegistrationPage.setValue(email);
+        this.passwordFieldByRegistrationPage.setValue(password);
+        buttonRegistration.click();
+      /*  logoOnRegistrationPage.scrollTo().click();
+        MainPage mainPage = page(MainPage.class);
+        return mainPage;*/
+    }
+
+     /*  logoOnRegistrationPage.scrollTo().click();
+    MainPage mainPage = page(MainPage.class);
+        return mainPage;*/
+
+
     @FindBy(how = How.XPATH, using = ".//*[@class='input__placeholder text noselect text_type_main-default' and contains(text(),'Имя')]/following-sibling::input")
     public SelenideElement nameFieldByRegistrationPage;
 
@@ -39,7 +54,7 @@ public class RegistrationPage {
         return loginPage;
     }
 
-    public void getURLafterClickButtonRegistration(String url) {
+    public void CheckGetURLafterClickButtonRegistration(String url) {
         webdriver().shouldHave(url(url));
     }
 
@@ -47,7 +62,7 @@ public class RegistrationPage {
     public SelenideElement messageNotCorrectPassword;
 
 
-    public void getMessageNotCorrectPassword() {
+    public void CheckGetMessageNotCorrectPassword() {
         messageNotCorrectPassword.shouldBe(exactText("Некорректный пароль"));
     }
 
@@ -78,8 +93,6 @@ public class RegistrationPage {
         LoginPage loginPage = page(LoginPage.class);
         return loginPage;
     }
-
-
 
 
 }

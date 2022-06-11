@@ -11,12 +11,9 @@ public class QuitFromPersonalAccount extends BaseTest {
         MainPage objMainPage = open(URL_STELLAR_BURGER_PAGE, MainPage.class);
         LoginPage objLoginPage = objMainPage.clickButtonPersonalAccount();
         RegistrationPage objRegistrationPage = objLoginPage.scrolAndclickButtonRegistration();
-        objRegistrationPage.setNameByRegistrationPage(name);
-        objRegistrationPage.setEmailByRegistrationPage(email);
-        objRegistrationPage.setPasswordFieldByRegistrationPage(password);
-        objRegistrationPage.clickButtonRegistration();
-        objRegistrationPage.clickLogoOnRegistrationPage();
+        objRegistrationPage.setNameEmailPassswordAndClickButtonRegistation(name, email, password);
     }
+
     @DisplayName("Выход из аккаунта")
     @Description("Выход из аккаунта")
     @Test
@@ -29,9 +26,6 @@ public class QuitFromPersonalAccount extends BaseTest {
         MainPage objMainPage2 = objLoginPage2.clickButtonEnter();
         objMainPage2.clicklogoOnMainPage();
         LoginPage objLoginPage3 = objMainPage2.clickButtonPersonalAccount();
-        objLoginPage3.getURLafterClickButtonExit(URL_STELLAR_BURGER_PAGE_LOGIN);
-
-
-
+        objLoginPage3.CheckGetURLafterClickButtonExit(URL_STELLAR_BURGER_PAGE_LOGIN);
     }
-    }
+}

@@ -10,6 +10,16 @@ public class LoginPage {
     @FindBy(how = How.XPATH, using = ".//*[@class='input__placeholder text noselect text_type_main-default' and contains(text(),'Email')]/following-sibling::input")
     public SelenideElement emailFieldByLoginPage;
 
+    public MainPage setEmailAndPasswordAndClickByLoginPage(String email, String password) {
+        this.emailFieldByLoginPage.setValue(email);
+        this.passwordFieldByLoginPage.setValue(password);
+        buttonEnter.scrollTo().click();
+        MainPage mainPage = page(MainPage.class);
+        return mainPage;
+    }
+
+
+
     public void setEmailByLoginPage(String emailField) {
         this.emailFieldByLoginPage.setValue(emailField);
     }
@@ -39,7 +49,7 @@ public class LoginPage {
         return mainPage;
     }
 
-    public void getURLafterClickButtonEnter(String url) {
+    public void CheckGetURLafterClickButtonEnter(String url) {
         webdriver().shouldHave(url(url));
     }
 
@@ -59,7 +69,7 @@ public class LoginPage {
         buttonExit.click();
     }
 
-    public void getURLafterClickButtonExit(String url) {
+    public void CheckGetURLafterClickButtonExit(String url) {
         buttonExit.click();
         webdriver().shouldHave(url(url));
     }

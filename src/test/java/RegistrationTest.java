@@ -13,11 +13,8 @@ public class RegistrationTest extends BaseTest {
         MainPage objMainPage = open(URL_STELLAR_BURGER_PAGE, MainPage.class);
         LoginPage objLoginPage = objMainPage.clickButtonLogIn();
         RegistrationPage objRegistrationPage = objLoginPage.scrolAndclickButtonRegistration();
-        objRegistrationPage.setNameByRegistrationPage(name);
-        objRegistrationPage.setEmailByRegistrationPage(email);
-        objRegistrationPage.setPasswordFieldByRegistrationPage(password);
-        objRegistrationPage.clickButtonRegistration();
-        objRegistrationPage.getURLafterClickButtonRegistration(URL_STELLAR_BURGER_PAGE_LOGIN);
+        objRegistrationPage.setNameEmailPassswordAndClickButtonRegistation(name, email, password);
+        objRegistrationPage.CheckGetURLafterClickButtonRegistration(URL_STELLAR_BURGER_PAGE_LOGIN);
     }
 
     @DisplayName("Негативная проверка на регистрацию с вводом пароля менее 6 символов")
@@ -27,13 +24,7 @@ public class RegistrationTest extends BaseTest {
         MainPage objMainPage = open(URL_STELLAR_BURGER_PAGE, MainPage.class);
         LoginPage objLoginPage = objMainPage.clickButtonLogIn();
         RegistrationPage objRegistrationPage = objLoginPage.scrolAndclickButtonRegistration();
-        objRegistrationPage.setNameByRegistrationPage(name);
-        objRegistrationPage.setEmailByRegistrationPage(email);
-        objRegistrationPage.setPasswordFieldByRegistrationPage(passwordLess6characters);
-        objRegistrationPage.clickButtonRegistration();
-        objRegistrationPage.getMessageNotCorrectPassword();
+        objRegistrationPage.setNameEmailPassswordAndClickButtonRegistation(name, email, passwordLess6characters);
+        objRegistrationPage.CheckGetMessageNotCorrectPassword();
     }
-
-
-
 }

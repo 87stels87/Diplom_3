@@ -21,11 +21,7 @@ public class TransfersTest extends BaseTest {
         MainPage objMainPage = open(URL_STELLAR_BURGER_PAGE, MainPage.class);
         LoginPage objLoginPage = objMainPage.clickButtonPersonalAccount();
         RegistrationPage objRegistrationPage = objLoginPage.scrolAndclickButtonRegistration();
-        objRegistrationPage.setNameByRegistrationPage(name);
-        objRegistrationPage.setEmailByRegistrationPage(email);
-        objRegistrationPage.setPasswordFieldByRegistrationPage(password);
-        objRegistrationPage.clickButtonRegistration();
-        objRegistrationPage.clickLogoOnRegistrationPage();
+        objRegistrationPage.setNameEmailPassswordAndClickButtonRegistation(name, email, password);
     }
 
     @DisplayName("Проверка перехода в личный кабинет")
@@ -52,7 +48,7 @@ public class TransfersTest extends BaseTest {
         objLoginPage.setPasswordFieldByLoginPage(password);
         objLoginPage.clickButtonEnter();
         MainPage objMainPage1 = objLoginPage.clickButtonConsructor();
-        objMainPage1.getMessageAssembleBurger();
+        objMainPage1.CheckGetMessageAssembleBurger();
     }
 
     @DisplayName("Переход на булки")
@@ -65,7 +61,7 @@ public class TransfersTest extends BaseTest {
         objLoginPage.setPasswordFieldByLoginPage(password);
         objLoginPage.clickButtonEnter();
         MainPage objMainPage1 = objLoginPage.clickButtonConsructor();
-        objMainPage1.getBun();
+        objMainPage1.CheckGetBun();
     }
 
     @DisplayName("Переход на соусы")
@@ -78,7 +74,7 @@ public class TransfersTest extends BaseTest {
         objLoginPage.setPasswordFieldByLoginPage(password);
         objLoginPage.clickButtonEnter();
         MainPage objMainPage1 = objLoginPage.clickButtonConsructor();
-        objMainPage1.getSauce();
+        objMainPage1.CheckGetSauce();
     }
 
     @DisplayName("Переход на начинки")
@@ -91,6 +87,6 @@ public class TransfersTest extends BaseTest {
         objLoginPage.setPasswordFieldByLoginPage(password);
         objLoginPage.clickButtonEnter();
         MainPage objMainPage1 = objLoginPage.clickButtonConsructor();
-        objMainPage1.getFilling();
+        objMainPage1.CheckGetFilling();
     }
 }

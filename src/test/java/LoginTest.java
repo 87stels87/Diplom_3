@@ -20,11 +20,7 @@ public class LoginTest extends BaseTest {
         MainPage objMainPage = open(URL_STELLAR_BURGER_PAGE, MainPage.class);
         LoginPage objLoginPage = objMainPage.clickButtonPersonalAccount();
         RegistrationPage objRegistrationPage = objLoginPage.scrolAndclickButtonRegistration();
-        objRegistrationPage.setNameByRegistrationPage(name);
-        objRegistrationPage.setEmailByRegistrationPage(email);
-        objRegistrationPage.setPasswordFieldByRegistrationPage(password);
-        objRegistrationPage.clickButtonRegistration();
-        objRegistrationPage.clickLogoOnRegistrationPage();
+        objRegistrationPage.setNameEmailPassswordAndClickButtonRegistation(name, email, password);
     }
 
 
@@ -34,10 +30,8 @@ public class LoginTest extends BaseTest {
     public void testLoginAfterClickPersonalAccount() {
         MainPage objMainPage = open(URL_STELLAR_BURGER_PAGE, MainPage.class);
         LoginPage objLoginPage = objMainPage.clickButtonPersonalAccount();
-        objLoginPage.setEmailByLoginPage(email);
-        objLoginPage.setPasswordFieldByLoginPage(password);
-        objLoginPage.clickButtonEnter();
-        objLoginPage.getURLafterClickButtonEnter(URL_STELLAR_BURGER_PAGE);
+        objLoginPage.setEmailAndPasswordAndClickByLoginPage(email, password);
+        objLoginPage.CheckGetURLafterClickButtonEnter(URL_STELLAR_BURGER_PAGE);
     }
 
     @DisplayName("Вход через нажатие на кнопку Войти в аккаунт")
@@ -46,10 +40,8 @@ public class LoginTest extends BaseTest {
     public void testLoginAfterClickButtonEnter() {
         MainPage objMainPage = open(URL_STELLAR_BURGER_PAGE, MainPage.class);
         LoginPage objLoginPage = objMainPage.clickButtonLogIn();
-        objLoginPage.setEmailByLoginPage(email);
-        objLoginPage.setPasswordFieldByLoginPage(password);
-        objLoginPage.clickButtonEnter();
-        objLoginPage.getURLafterClickButtonEnter(URL_STELLAR_BURGER_PAGE);
+        objLoginPage.setEmailAndPasswordAndClickByLoginPage(email, password);
+        objLoginPage.CheckGetURLafterClickButtonEnter(URL_STELLAR_BURGER_PAGE);
     }
 
     @DisplayName("Вход через форму регистрации")
@@ -60,10 +52,8 @@ public class LoginTest extends BaseTest {
         LoginPage objLoginPage = objMainPage.clickButtonLogIn();
         objLoginPage.scrolAndclickButtonRegistration();
         objLoginPage.clickButtonLogin();
-        objLoginPage.setEmailByLoginPage(email);
-        objLoginPage.setPasswordFieldByLoginPage(password);
-        objLoginPage.clickButtonEnter();
-        objLoginPage.getURLafterClickButtonEnter(URL_STELLAR_BURGER_PAGE);
+        objLoginPage.setEmailAndPasswordAndClickByLoginPage(email, password);
+        objLoginPage.CheckGetURLafterClickButtonEnter(URL_STELLAR_BURGER_PAGE);
     }
 
     @DisplayName("Вход через форму восстановление пароля")
@@ -74,9 +64,7 @@ public class LoginTest extends BaseTest {
         LoginPage objLoginPage = objMainPage.clickButtonLogIn();
         objLoginPage.clickButtonRecoveryPassword();
         objLoginPage.clickButtonLogin();
-        objLoginPage.setEmailByLoginPage(email);
-        objLoginPage.setPasswordFieldByLoginPage(password);
-        objLoginPage.clickButtonEnter();
-        objLoginPage.getURLafterClickButtonEnter(URL_STELLAR_BURGER_PAGE);
+        objLoginPage.setEmailAndPasswordAndClickByLoginPage(email, password);
+        objLoginPage.CheckGetURLafterClickButtonEnter(URL_STELLAR_BURGER_PAGE);
     }
 }

@@ -33,28 +33,28 @@ public class MainPage {
     @FindBy(how = How.XPATH, using = ".//*[@class='text text_type_main-large mb-5 mt-10' and contains(text(),'Соберите бургер')]")
     public SelenideElement messageAssembleBurger;
 
-    public void getMessageAssembleBurger() {
+    public void CheckGetMessageAssembleBurger() {
         messageAssembleBurger.shouldBe().isDisplayed();
     }
 
     @FindBy(how = How.XPATH, using = ".//*[@class='BurgerIngredient_ingredient__text__yp3dH' and contains(text(),'Флюоресцентная булка R2-D3')]")
     public SelenideElement bun;
 
-    public void getBun() {
+    public void CheckGetBun() {
         bun.shouldBe().isDisplayed();
     }
 
     @FindBy(how = How.XPATH, using = ".//*[@class='BurgerIngredient_ingredient__text__yp3dH' and contains(text(),'Соус Spicy-X')]")
     public SelenideElement sauce;
 
-    public void getSauce() {
+    public void CheckGetSauce() {
         sauce.scrollTo().shouldBe().isDisplayed();
     }
 
     @FindBy(how = How.XPATH, using = ".//*[@class='BurgerIngredient_ingredient__text__yp3dH' and contains(text(),'Мясо бессмертных моллюсков Protostomia')]")
     public SelenideElement filling;
 
-    public void getFilling() {
+    public void CheckGetFilling() {
         filling.scrollTo().shouldBe().isDisplayed();
     }
 
