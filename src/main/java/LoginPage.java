@@ -19,7 +19,6 @@ public class LoginPage {
     }
 
 
-
     public void setEmailByLoginPage(String emailField) {
         this.emailFieldByLoginPage.setValue(emailField);
     }
@@ -87,9 +86,6 @@ public class LoginPage {
     public void clickButtonLogin() {
         buttonLogin.scrollTo().click();
     }
-
-/*    @FindBy(how = How.XPATH, using = ".//*[@class='Auth_link__1fOlj' and contains(text(),'Войти')]")
-    public SelenideElement buttonAccount;*/
 
     @FindBy(how = How.XPATH, using = ".//*[@class='Account_link__2ETsJ text text_type_main-medium text_color_inactive Account_link_active__2opc9' and contains(text(),'Профиль')]")
     public SelenideElement buttonProfile;

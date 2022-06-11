@@ -38,39 +38,6 @@ public class MainPage {
         messageAssembleBurger.shouldBe().isDisplayed();
     }
 
-/*    @FindBy(how = How.XPATH, using = ".//*[@class='BurgerIngredient_ingredient__text__yp3dH' and contains(text(),'Флюоресцентная булка R2-D3')]")
-    public SelenideElement bun;
-
-    public void CheckGetBun() {
-        //  bun.scrollTo().;
-        bun.shouldBe().isDisplayed();
-    }
-
-    @FindBy(how = How.XPATH, using = ".//*[@class='BurgerIngredient_ingredient__text__yp3dH' and contains(text(),'Соус Spicy-X')]")
-    public SelenideElement sauce;*/
-
-/*    public void CheckGetSauce() {
-        sauce.shouldBe(visible);
-    }
-
-    @FindBy(how = How.XPATH, using = ".//*[@class='BurgerIngredient_ingredient__text__yp3dH' and contains(text(),'Мясо бессмертных моллюсков Protostomia')]")
-    public SelenideElement filling;*/
-
-/*
-    public void CheckGetFilling() {
-        filling.scrollTo().shouldBe(visible);
-    }
-*/
-
-/*
-    @FindBy(how = How.XPATH, using = ".//*[@class='text text_type_main-default'  and contains(text(),'Соусы')]")
-    public SelenideElement sauceRaz;
-
-    public void sauceRaz() {
-        sauceRaz.click();
-    }*/
-
-
     @FindBy(how = How.XPATH, using = ".//*[@class='text text_type_main-default'  and contains(text(),'Начинки')]")
     public SelenideElement fillingChapter;
 
@@ -99,6 +66,4 @@ public class MainPage {
     public void checkCurentChapterBun() {
         curentChapter.shouldBe(exactText("Булки"));
     }
-
-
 }
