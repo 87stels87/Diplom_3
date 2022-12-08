@@ -36,4 +36,6 @@ public class RegistrationPage {
     public void CheckGetMessageNotCorrectPassword() {
         messageNotCorrectPassword.shouldBe(exactText("Некорректный пароль"));
     }
+
+
 }
